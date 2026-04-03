@@ -5,9 +5,9 @@
     "description": "API for managing library users and books",
     "version": "1.0.0"
   },
-  "host": "cse341-project-2-1yyy.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["http"],
   "paths": {
     "/login": {
       "get": {

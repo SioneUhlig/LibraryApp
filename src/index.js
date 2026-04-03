@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.json({ message: 'Library API is running' });
+});
+
 router.get('/professional', (req, res) => {
   res.json({
     professionalName: "JANE SMITH",
@@ -25,6 +29,6 @@ router.get('/professional', (req, res) => {
 
 router.use('/contacts', require('./contacts'));
 router.use('/books', require('./books'));
-router.use('/', require('./swagger'));
+router.use('/', require('../routes/swagger'));
 
 module.exports = router;

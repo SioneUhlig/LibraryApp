@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoDB = require('./routes/data/database');
+const mongoDB = require('./src/routes/data/database.js');
 const passport = require('passport');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -33,7 +33,7 @@ app
   })
   .use(cors({ methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'] }))
   .use(cors({ origin: '*' }))
-  .use('/', require('./routes/index.js'));
+  .use('/', require('./src/routes/index.js'));
 
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
